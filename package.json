@@ -9,7 +9,7 @@
 		"loadGraphData": "yarn run scriptManager shouldCompileScript=true @dependency/deploymentScript \".graphDataLoading.loadGraphDataFromFile({ shouldClearDatabase: true, graphDataFilePath: './resource/graphData.json' })\"",
 		"build": "yarn run scriptManager shouldCompileScript=true @dependency/deploymentScript \".buildSourceCode.moduleProject({}, {compile:[/**'./test'*/]})\"",
 		"buildAndRelease": "yarn run scriptManager shouldCompileScript=true @dependency/deploymentScript \".buildAndRelease.moduleProject({})\"",
-		"install": "cd ./packageManager/&& yarn install # as the workspaces packages require flat dependency graph",
+		"install": "cd ./packageManager/ && yarn install # as the workspaces packages require flat dependency graph",
 		"upgrade": "echo '• Note: packageManager flat dependency requires a separate manual upgrade.'"
 	},
 	"dependencies": {},
