@@ -22,6 +22,9 @@ const ownConfig = {
     get resource() {
       return path.join(ownConfig.directory.root, './resource')
     },
+    get packageManager() {
+      return path.join(ownConfig.directory.root, './packageManager')
+    },
   },
   entrypoint: {
     get programmaticAPI() {
@@ -35,7 +38,8 @@ const ownConfig = {
     get compile() {
       return [
         path.relative(ownConfig.directory.root, ownConfig.directory.source),
-        path.relative(ownConfig.directory.root, ownConfig.directory.resource)
+        path.relative(ownConfig.directory.root, ownConfig.directory.resource),
+        path.relative(ownConfig.directory.root, ownConfig.directory.packageManager),
       ]
     },
     repositoryURL: 'https://github.com/AppScriptIO/gazitengWebapp-clientSide',
