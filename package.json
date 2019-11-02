@@ -1,6 +1,6 @@
 {
 	"name": "@application/gazitengWebapp-clientSide",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"main": "./entrypoint/programmaticAPI",
 	"bin": {},
 	"flat": false,
