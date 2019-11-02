@@ -25,7 +25,7 @@ const ownConfig = {
   },
   entrypoint: {
     get programmaticAPI() {
-      return path.relative(ownConfig.directory.source)
+      return './script.js'
     },
   },
   get script() {
