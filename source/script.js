@@ -1,7 +1,3 @@
-export function getProjectConfig() {
-  return {
-    distribution: [
-      {}
-    ]
-  }
+module.exports = {
+  path: __dirname,
 }

@@ -34,6 +34,7 @@ const ownConfig = {
   get script() {
     return [...script, ...[{ type: 'directory', path: ownConfig.directory.script }, { type: 'directory', path: path.join(ownConfig.directory.root, 'node_modules') }]]
   },
+  // TODO: Update build tool to build clientside project - where different distributions are added into their respective distribution folders and entrypoint is built to add targetAgent for each distro
   build: {
     get compile() {
       return [
@@ -42,15 +43,35 @@ const ownConfig = {
         path.relative(ownConfig.directory.root, ownConfig.directory.packageManager),
       ]
     },
+    clientSideDistribution: {
+      polyfill: {
+        targetAgent: function({ agent /* instance of `useragent` module */ }) {
+          switch (agent.family) {
+            case 'Chrome':
+            case 'Chromium':
+            case 'Chrome Headless':
+              return agent.satisfies('<49.0.0')
+            case 'Opera':
+            case 'OPR':
+              return agent.satisfies('<36.0.0')
+            case 'Vivaldi':
+              return agent.satisfies('<1')
+            case 'Safari':
+            case 'Mobile Safari':
+              return agent.satisfies('<10.0.0')
+            case 'Firefox':
+              return agent.satisfies('<51.0.0')
+            case 'Edge':
+              return agent.satisfies('<15.0.63')
+            case 'Other':
+            default:
+              //for `postman` --> agent.source.toLowerCase().includes('postman')
+              return false // default for native version rather than previous choice of polyfill as defalult
+          }
+        },
+      },
+    },
     repositoryURL: 'https://github.com/AppScriptIO/gazitengWebapp-clientSide',
-  },
-  distribution: {
-    get native() {
-      return path.join(ownConfig.directory.distribution, 'nativeClientSide')
-    },
-    get polyfill() {
-      return path.join(ownConfig.directory.distribution, 'polyfillClientSide')
-    },
   },
   transpilation: {
     babelConfigKey: 'serverRuntime.BabelConfig.js',
