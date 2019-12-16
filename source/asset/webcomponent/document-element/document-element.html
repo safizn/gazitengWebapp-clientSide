@@ -1,13 +1,13 @@
-<!-- Problematic !! <base target="_top" href="{%= Application.extendedSubclass.static['StaticContent'].url %}"> -->
+<!-- Problematic !! <base target="_top" href="{%= argument.url %}"> -->
 
 <link rel="import" href="../component.package/polymer/polymer-element.html">
 <link rel="import" href="../component.package/iron-pages/iron-pages.html">
 <link rel="import" href="../component.package/app-route/app-location.html">
 <link rel="import" href="../component.package/app-route/app-route.html">
-<!-- LAYOUT --> 
+<!-- LAYOUT -->
 <link rel="import" href="../webapp-layout-toolbar/webapp-layout-toolbar.html$">
 
-<!-- CUSTOM STYLE --> 
+<!-- CUSTOM STYLE -->
 <link rel="stylesheet" href="/asset/stylesheet/default.css">
 <link rel="import" href="../shared-styles.html">
 
@@ -15,12 +15,20 @@
     <template>
         <custom-style>
             <style include="shared-styles">
-                {%=`${argument.css}` %}
+                {
+                    %=`$ {
+                        argument.css
+                    }
+
+                    ` %
+                }
             </style>
         </custom-style>
         {%=`${argument.html}` %}
     </template>
     <script>
-        {%=`${argument.js}` %}
+        {
+            %= `${argument.js}` %
+        }
     </script>
 </dom-module>
