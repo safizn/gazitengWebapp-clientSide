@@ -23,12 +23,12 @@ if (filesystem.existsSync(projectConfig.directory.distribution)) {
   // • Transpilation (babelJSCompiler)
   const { Compiler } = require('@dependency/javascriptTranspilation')
   let compiler = new Compiler({ callerPath: __dirname })
-  compiler.requireHook({ restrictToTargetProject: true, matchTargetFile: true })
+  compiler.requireHook({ restrictToTargetProject: true })
   let modulePath = path.join(projectConfig.directory.source, projectConfig.entrypoint.programmaticAPI)
   let exportDistributionArray = [require(modulePath)]
   // process.on('exit', () => {
   //   console.log(compiler.loadedFiles.map(value => value.filename))
-  //   console.log(compiler.babelRegisterConfig.ignore)
+  //   console.log(compiler.config.ignore)
   // })
   module.exports = exportDistributionArray
 }
