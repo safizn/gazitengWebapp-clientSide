@@ -21,7 +21,7 @@ if (filesystem.existsSync(projectConfig.directory.distribution)) {
   module.exports = exportDistributionArray
 } else {
   // • Transpilation (babelJSCompiler)
-  const { Compiler } = require('@dependency/javascriptTranspilation')
+  const { Compiler } = require('@deployment/javascriptTranspilation')
   let compiler = new Compiler({ callerPath: __dirname })
   compiler.requireHook({ restrictToTargetProject: true })
   let modulePath = path.join(projectConfig.directory.source, projectConfig.entrypoint.programmaticAPI)

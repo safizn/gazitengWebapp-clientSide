@@ -5,7 +5,7 @@ const ownConfig = {
   directory: {
     root: path.normalize(`${__dirname}/..`),
     get deploymentScript() {
-      return path.dirname(require.resolve(`@dependency/deploymentScript/package.json`))
+      return path.dirname(require.resolve(`@deployment/deploymentScript/package.json`))
     },
     get source() {
       return path.join(ownConfig.directory.root, './source')
@@ -76,7 +76,7 @@ const ownConfig = {
   transpilation: {
     babelConfigKey: 'serverRuntime.BabelConfig.js',
     get babelConfig() {
-      const { getBabelConfig } = require('@dependency/javascriptTranspilation')
+      const { getBabelConfig } = require('@deployment/javascriptTranspilation')
       return getBabelConfig(ownConfig.transpilation.babelConfigKey, { configType: 'json' })
     },
   },
