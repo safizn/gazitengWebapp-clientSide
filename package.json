@@ -1,6 +1,6 @@
 {
 	"name": "@service/gazitengWebapp-clientSide",
-	"version": "1.2.4",
+	"version": "1.2.1",
 	"main": "./entrypoint/programmaticAPI",
 	"bin": {},
 	"flat": false,
@@ -10,8 +10,7 @@
 		"build": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".buildSourceCode.moduleProject({}, {compile:[/**'./test'*/]})\"",
 		"buildAndRelease": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".buildAndRelease.moduleProject({})\"",
 		"install": "cd ./packageManager/ && yarn install # as the workspaces packages require flat dependency graph",
-		"upgrade": "echo '• Note: packageManager flat dependency requires a separate manual upgrade.'",
-		"release": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".buildAndRelease.moduleProject({ shouldBuildCode: false })\""
+		"upgrade": "echo '• Note: packageManager flat dependency requires a separate manual upgrade.'"
 	},
 	"dependencies": {},
 	"devDependencies": {
