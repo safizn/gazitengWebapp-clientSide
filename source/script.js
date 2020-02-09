@@ -1,3 +1,3 @@
-module.exports = {
-  path: __dirname,
-}
+"use strict";module.exports = {
+  path: __dirname };
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NvdXJjZS9zY3JpcHQuanMiXSwibmFtZXMiOlsibW9kdWxlIiwiZXhwb3J0cyIsInBhdGgiLCJfX2Rpcm5hbWUiXSwibWFwcGluZ3MiOiJhQUFBQSxNQUFNLENBQUNDLE9BQVAsR0FBaUI7QUFDZkMsRUFBQUEsSUFBSSxFQUFFQyxTQURTLEVBQWpCIiwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSB7XG4gIHBhdGg6IF9fZGlybmFtZSxcbn1cbiJdfQ==

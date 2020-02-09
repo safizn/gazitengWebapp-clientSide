@@ -1,35 +1,36 @@
-// import http://localhost:8087/socket.io/socket.io.js
-var socket = io('http://localhost:8087')
-socket.on('connect', function() {
-  console.log('Connected !!')
-})
-socket.on('event', function(data) {
-  console.log(data)
-})
-socket.on('disconnect', function() {})
+"use strict";
+var socket = io('http://localhost:8087');
+socket.on('connect', function () {
+  console.log('Connected !!');
+});
+socket.on('event', function (data) {
+  console.log(data);
+});
+socket.on('disconnect', function () {});
 
-// ----------------------------------------------------
-// OR:
-// Create a socket instance
-var socket = new WebSocket('{%= argument.url %}')
 
-// Open the socket
-socket.onopen = function(event) {
-  console.log('☕ WebSocket connected.')
 
-  // Send an initial message
-  // socket.send('I am the client and I\'m listening!');
 
-  // Listen for messages
-  socket.onmessage = function(event) {
-    console.log('Client received a message', event)
-  }
+var socket = new WebSocket('{%= argument.url %}');
 
-  // Listen for socket closes
-  socket.onclose = function(event) {
-    console.log('Client notified socket has closed', event)
-  }
 
-  // To close the socket....
-  //socket.close()
-}
+socket.onopen = function (event) {
+  console.log('☕ WebSocket connected.');
+
+
+
+
+
+  socket.onmessage = function (event) {
+    console.log('Client received a message', event);
+  };
+
+
+  socket.onclose = function (event) {
+    console.log('Client notified socket has closed', event);
+  };
+
+
+
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NvdXJjZS9hc3NldC9qYXZhc2NyaXB0L3dlYnNvY2tldC5qcyJdLCJuYW1lcyI6WyJzb2NrZXQiLCJpbyIsIm9uIiwiY29uc29sZSIsImxvZyIsImRhdGEiLCJXZWJTb2NrZXQiLCJvbm9wZW4iLCJldmVudCIsIm9ubWVzc2FnZSIsIm9uY2xvc2UiXSwibWFwcGluZ3MiOiI7QUFDQSxJQUFJQSxNQUFNLEdBQUdDLEVBQUUsQ0FBQyx1QkFBRCxDQUFmO0FBQ0FELE1BQU0sQ0FBQ0UsRUFBUCxDQUFVLFNBQVYsRUFBcUIsWUFBVztBQUM5QkMsRUFBQUEsT0FBTyxDQUFDQyxHQUFSLENBQVksY0FBWjtBQUNELENBRkQ7QUFHQUosTUFBTSxDQUFDRSxFQUFQLENBQVUsT0FBVixFQUFtQixVQUFTRyxJQUFULEVBQWU7QUFDaENGLEVBQUFBLE9BQU8sQ0FBQ0MsR0FBUixDQUFZQyxJQUFaO0FBQ0QsQ0FGRDtBQUdBTCxNQUFNLENBQUNFLEVBQVAsQ0FBVSxZQUFWLEVBQXdCLFlBQVcsQ0FBRSxDQUFyQzs7Ozs7QUFLQSxJQUFJRixNQUFNLEdBQUcsSUFBSU0sU0FBSixDQUFjLHFCQUFkLENBQWI7OztBQUdBTixNQUFNLENBQUNPLE1BQVAsR0FBZ0IsVUFBU0MsS0FBVCxFQUFnQjtBQUM5QkwsRUFBQUEsT0FBTyxDQUFDQyxHQUFSLENBQVksd0JBQVo7Ozs7OztBQU1BSixFQUFBQSxNQUFNLENBQUNTLFNBQVAsR0FBbUIsVUFBU0QsS0FBVCxFQUFnQjtBQUNqQ0wsSUFBQUEsT0FBTyxDQUFDQyxHQUFSLENBQVksMkJBQVosRUFBeUNJLEtBQXpDO0FBQ0QsR0FGRDs7O0FBS0FSLEVBQUFBLE1BQU0sQ0FBQ1UsT0FBUCxHQUFpQixVQUFTRixLQUFULEVBQWdCO0FBQy9CTCxJQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBWSxtQ0FBWixFQUFpREksS0FBakQ7QUFDRCxHQUZEOzs7O0FBTUQsQ0FsQkQiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBpbXBvcnQgaHR0cDovL2xvY2FsaG9zdDo4MDg3L3NvY2tldC5pby9zb2NrZXQuaW8uanNcbnZhciBzb2NrZXQgPSBpbygnaHR0cDovL2xvY2FsaG9zdDo4MDg3JylcbnNvY2tldC5vbignY29ubmVjdCcsIGZ1bmN0aW9uKCkge1xuICBjb25zb2xlLmxvZygnQ29ubmVjdGVkICEhJylcbn0pXG5zb2NrZXQub24oJ2V2ZW50JywgZnVuY3Rpb24oZGF0YSkge1xuICBjb25zb2xlLmxvZyhkYXRhKVxufSlcbnNvY2tldC5vbignZGlzY29ubmVjdCcsIGZ1bmN0aW9uKCkge30pXG5cbi8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cbi8vIE9SOlxuLy8gQ3JlYXRlIGEgc29ja2V0IGluc3RhbmNlXG52YXIgc29ja2V0ID0gbmV3IFdlYlNvY2tldCgneyU9IGFyZ3VtZW50LnVybCAlfScpXG5cbi8vIE9wZW4gdGhlIHNvY2tldFxuc29ja2V0Lm9ub3BlbiA9IGZ1bmN0aW9uKGV2ZW50KSB7XG4gIGNvbnNvbGUubG9nKCfimJUgV2ViU29ja2V0IGNvbm5lY3RlZC4nKVxuXG4gIC8vIFNlbmQgYW4gaW5pdGlhbCBtZXNzYWdlXG4gIC8vIHNvY2tldC5zZW5kKCdJIGFtIHRoZSBjbGllbnQgYW5kIElcXCdtIGxpc3RlbmluZyEnKTtcblxuICAvLyBMaXN0ZW4gZm9yIG1lc3NhZ2VzXG4gIHNvY2tldC5vbm1lc3NhZ2UgPSBmdW5jdGlvbihldmVudCkge1xuICAgIGNvbnNvbGUubG9nKCdDbGllbnQgcmVjZWl2ZWQgYSBtZXNzYWdlJywgZXZlbnQpXG4gIH1cblxuICAvLyBMaXN0ZW4gZm9yIHNvY2tldCBjbG9zZXNcbiAgc29ja2V0Lm9uY2xvc2UgPSBmdW5jdGlvbihldmVudCkge1xuICAgIGNvbnNvbGUubG9nKCdDbGllbnQgbm90aWZpZWQgc29ja2V0IGhhcyBjbG9zZWQnLCBldmVudClcbiAgfVxuXG4gIC8vIFRvIGNsb3NlIHRoZSBzb2NrZXQuLi4uXG4gIC8vc29ja2V0LmNsb3NlKClcbn1cbiJdfQ==
