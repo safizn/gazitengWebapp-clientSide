@@ -1,5 +1,5 @@
 const path = require('path')
-const { script } = require('./script.config.js')
+const script = require('./script.config.js')
 
 const ownConfig = {
   directory: {
@@ -32,7 +32,13 @@ const ownConfig = {
     },
   },
   get script() {
-    return [...script, ...[{ type: 'directory', path: ownConfig.directory.script }, { type: 'directory', path: path.join(ownConfig.directory.root, 'node_modules') }]]
+    return [
+      ...script(),
+      ...[
+        { type: 'directory', path: ownConfig.directory.script },
+        { type: 'directory', path: path.join(ownConfig.directory.root, 'node_modules') },
+      ],
+    ]
   },
   // TODO: Update build tool to build clientside project - where different distributions are added into their respective distribution folders and entrypoint is built to add targetAgent for each distro
   build: {
