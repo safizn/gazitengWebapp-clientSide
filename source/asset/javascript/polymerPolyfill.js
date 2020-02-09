@@ -1,51 +1,52 @@
-// Polymer settings, Polyfill
+"use strict";
 {
-  // Load Polymer (importing through the bower using the first webcomponent to be imported to the document, which includes `../polymer/polymer.html` import)
-  // NOTE: Problem that it is executed after the below code.
-  // System.import('polymer@2.0-preview/polymer.html!')
-  // System.import('http://cdn.localhost/asset/webcomponent/component.package/polymer/polymer.html!')
 
-  // Web performance API
-  // window.performance && performance.mark && performance.mark('entrypoint.html');
 
-  // Webcomponents Loader resolves all checks and loads polyfills if necessary.
-  var script = document.createElement('script')
-  script.async = true
-  script.src = '/asset/webcomponent/component.package/webcomponentsjs/webcomponents-loader.js'
-  // script.onload = afterLoad; // webcomponents-loader.js will load the polyfill, only then should be called "afterLoad" function.
-  document.head.appendChild(script)
 
-  // // Load webcomponentsjs polyfill if browser does not support native Web Components
-  // function afterLoad() {
-  //     // For native Imports, manually fire WebComponentsReady so user code
-  //     // can use the same code path for native and polyfill'd imports.
-  //     if (!window.HTMLImports) {
-  //         window.dispatchEvent(
-  //             new CustomEvent('WebComponentsReady', {bubbles: true})
-  //         );
-  //     }
-  // };
 
-  // let webComponentsSupported = (
-  //     'registerElement' in document &&
-  //     'import' in document.createElement('link') &&
-  //     'content' in document.createElement('template')
-  // );
 
-  // if (!webComponentsSupported) {
-  //     console.info('☕ Polyfill webcomponents. Loading webcomponents javascript.')
-  //     let script = document.createElement('script');
-  //     script.async = true;
-  //     script.src = '/asset/webcomponent/component.package/webcomponentsjs/webcomponents-loader.js';
-  //     // script.onload = afterLoad; // webcomponents-loader.js will load the polyfill, only then should be called "afterLoad" function.
-  //     document.head.appendChild(script);
-  //     // load tag 1.0.0-rc.4
-  //     // JSPM Causes `detected as amd but didn't execute correctly.` which needs configuration. Using bower istead.
-  //     // System.import('webcomponentsjs/webcomponents-lite.js')
-  // } else {
-  //     console.info('☕ Native webcomponents. Dispaching \'WebComponentsReady\' event manually.')
-  //     window.addEventListener('load', () => { // inorder for the event listener to be registered before dispatching it.
-  //         afterLoad();
-  //     })
-  // }
+
+
+
+
+  var script = document.createElement('script');
+  script.async = true;
+  script.src = '/asset/webcomponent/component.package/webcomponentsjs/webcomponents-loader.js';
+
+  document.head.appendChild(script);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NvdXJjZS9hc3NldC9qYXZhc2NyaXB0L3BvbHltZXJQb2x5ZmlsbC5qcyJdLCJuYW1lcyI6WyJzY3JpcHQiLCJkb2N1bWVudCIsImNyZWF0ZUVsZW1lbnQiLCJhc3luYyIsInNyYyIsImhlYWQiLCJhcHBlbmRDaGlsZCJdLCJtYXBwaW5ncyI6IjtBQUNBOzs7Ozs7Ozs7O0FBVUUsTUFBSUEsTUFBTSxHQUFHQyxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsUUFBdkIsQ0FBYjtBQUNBRixFQUFBQSxNQUFNLENBQUNHLEtBQVAsR0FBZSxJQUFmO0FBQ0FILEVBQUFBLE1BQU0sQ0FBQ0ksR0FBUCxHQUFhLCtFQUFiOztBQUVBSCxFQUFBQSxRQUFRLENBQUNJLElBQVQsQ0FBY0MsV0FBZCxDQUEwQk4sTUFBMUI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBbUNEIiwic291cmNlc0NvbnRlbnQiOlsiLy8gUG9seW1lciBzZXR0aW5ncywgUG9seWZpbGxcbntcbiAgLy8gTG9hZCBQb2x5bWVyIChpbXBvcnRpbmcgdGhyb3VnaCB0aGUgYm93ZXIgdXNpbmcgdGhlIGZpcnN0IHdlYmNvbXBvbmVudCB0byBiZSBpbXBvcnRlZCB0byB0aGUgZG9jdW1lbnQsIHdoaWNoIGluY2x1ZGVzIGAuLi9wb2x5bWVyL3BvbHltZXIuaHRtbGAgaW1wb3J0KVxuICAvLyBOT1RFOiBQcm9ibGVtIHRoYXQgaXQgaXMgZXhlY3V0ZWQgYWZ0ZXIgdGhlIGJlbG93IGNvZGUuXG4gIC8vIFN5c3RlbS5pbXBvcnQoJ3BvbHltZXJAMi4wLXByZXZpZXcvcG9seW1lci5odG1sIScpXG4gIC8vIFN5c3RlbS5pbXBvcnQoJ2h0dHA6Ly9jZG4ubG9jYWxob3N0L2Fzc2V0L3dlYmNvbXBvbmVudC9jb21wb25lbnQucGFja2FnZS9wb2x5bWVyL3BvbHltZXIuaHRtbCEnKVxuXG4gIC8vIFdlYiBwZXJmb3JtYW5jZSBBUElcbiAgLy8gd2luZG93LnBlcmZvcm1hbmNlICYmIHBlcmZvcm1hbmNlLm1hcmsgJiYgcGVyZm9ybWFuY2UubWFyaygnZW50cnlwb2ludC5odG1sJyk7XG5cbiAgLy8gV2ViY29tcG9uZW50cyBMb2FkZXIgcmVzb2x2ZXMgYWxsIGNoZWNrcyBhbmQgbG9hZHMgcG9seWZpbGxzIGlmIG5lY2Vzc2FyeS5cbiAgdmFyIHNjcmlwdCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ3NjcmlwdCcpXG4gIHNjcmlwdC5hc3luYyA9IHRydWVcbiAgc2NyaXB0LnNyYyA9ICcvYXNzZXQvd2ViY29tcG9uZW50L2NvbXBvbmVudC5wYWNrYWdlL3dlYmNvbXBvbmVudHNqcy93ZWJjb21wb25lbnRzLWxvYWRlci5qcydcbiAgLy8gc2NyaXB0Lm9ubG9hZCA9IGFmdGVyTG9hZDsgLy8gd2ViY29tcG9uZW50cy1sb2FkZXIuanMgd2lsbCBsb2FkIHRoZSBwb2x5ZmlsbCwgb25seSB0aGVuIHNob3VsZCBiZSBjYWxsZWQgXCJhZnRlckxvYWRcIiBmdW5jdGlvbi5cbiAgZG9jdW1lbnQuaGVhZC5hcHBlbmRDaGlsZChzY3JpcHQpXG5cbiAgLy8gLy8gTG9hZCB3ZWJjb21wb25lbnRzanMgcG9seWZpbGwgaWYgYnJvd3NlciBkb2VzIG5vdCBzdXBwb3J0IG5hdGl2ZSBXZWIgQ29tcG9uZW50c1xuICAvLyBmdW5jdGlvbiBhZnRlckxvYWQoKSB7XG4gIC8vICAgICAvLyBGb3IgbmF0aXZlIEltcG9ydHMsIG1hbnVhbGx5IGZpcmUgV2ViQ29tcG9uZW50c1JlYWR5IHNvIHVzZXIgY29kZVxuICAvLyAgICAgLy8gY2FuIHVzZSB0aGUgc2FtZSBjb2RlIHBhdGggZm9yIG5hdGl2ZSBhbmQgcG9seWZpbGwnZCBpbXBvcnRzLlxuICAvLyAgICAgaWYgKCF3aW5kb3cuSFRNTEltcG9ydHMpIHtcbiAgLy8gICAgICAgICB3aW5kb3cuZGlzcGF0Y2hFdmVudChcbiAgLy8gICAgICAgICAgICAgbmV3IEN1c3RvbUV2ZW50KCdXZWJDb21wb25lbnRzUmVhZHknLCB7YnViYmxlczogdHJ1ZX0pXG4gIC8vICAgICAgICAgKTtcbiAgLy8gICAgIH1cbiAgLy8gfTtcblxuICAvLyBsZXQgd2ViQ29tcG9uZW50c1N1cHBvcnRlZCA9IChcbiAgLy8gICAgICdyZWdpc3RlckVsZW1lbnQnIGluIGRvY3VtZW50ICYmXG4gIC8vICAgICAnaW1wb3J0JyBpbiBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdsaW5rJykgJiZcbiAgLy8gICAgICdjb250ZW50JyBpbiBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCd0ZW1wbGF0ZScpXG4gIC8vICk7XG5cbiAgLy8gaWYgKCF3ZWJDb21wb25lbnRzU3VwcG9ydGVkKSB7XG4gIC8vICAgICBjb25zb2xlLmluZm8oJ+KYlSBQb2x5ZmlsbCB3ZWJjb21wb25lbnRzLiBMb2FkaW5nIHdlYmNvbXBvbmVudHMgamF2YXNjcmlwdC4nKVxuICAvLyAgICAgbGV0IHNjcmlwdCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ3NjcmlwdCcpO1xuICAvLyAgICAgc2NyaXB0LmFzeW5jID0gdHJ1ZTtcbiAgLy8gICAgIHNjcmlwdC5zcmMgPSAnL2Fzc2V0L3dlYmNvbXBvbmVudC9jb21wb25lbnQucGFja2FnZS93ZWJjb21wb25lbnRzanMvd2ViY29tcG9uZW50cy1sb2FkZXIuanMnO1xuICAvLyAgICAgLy8gc2NyaXB0Lm9ubG9hZCA9IGFmdGVyTG9hZDsgLy8gd2ViY29tcG9uZW50cy1sb2FkZXIuanMgd2lsbCBsb2FkIHRoZSBwb2x5ZmlsbCwgb25seSB0aGVuIHNob3VsZCBiZSBjYWxsZWQgXCJhZnRlckxvYWRcIiBmdW5jdGlvbi5cbiAgLy8gICAgIGRvY3VtZW50LmhlYWQuYXBwZW5kQ2hpbGQoc2NyaXB0KTtcbiAgLy8gICAgIC8vIGxvYWQgdGFnIDEuMC4wLXJjLjRcbiAgLy8gICAgIC8vIEpTUE0gQ2F1c2VzIGBkZXRlY3RlZCBhcyBhbWQgYnV0IGRpZG4ndCBleGVjdXRlIGNvcnJlY3RseS5gIHdoaWNoIG5lZWRzIGNvbmZpZ3VyYXRpb24uIFVzaW5nIGJvd2VyIGlzdGVhZC5cbiAgLy8gICAgIC8vIFN5c3RlbS5pbXBvcnQoJ3dlYmNvbXBvbmVudHNqcy93ZWJjb21wb25lbnRzLWxpdGUuanMnKVxuICAvLyB9IGVsc2Uge1xuICAvLyAgICAgY29uc29sZS5pbmZvKCfimJUgTmF0aXZlIHdlYmNvbXBvbmVudHMuIERpc3BhY2hpbmcgXFwnV2ViQ29tcG9uZW50c1JlYWR5XFwnIGV2ZW50IG1hbnVhbGx5LicpXG4gIC8vICAgICB3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lcignbG9hZCcsICgpID0+IHsgLy8gaW5vcmRlciBmb3IgdGhlIGV2ZW50IGxpc3RlbmVyIHRvIGJlIHJlZ2lzdGVyZWQgYmVmb3JlIGRpc3BhdGNoaW5nIGl0LlxuICAvLyAgICAgICAgIGFmdGVyTG9hZCgpO1xuICAvLyAgICAgfSlcbiAgLy8gfVxufVxuIl19

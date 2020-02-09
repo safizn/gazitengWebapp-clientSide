@@ -1,25 +1,26 @@
-// IMPORTANT: This doesn't work ! as it ends up loading script later on in the load page.
+"use strict";
 
-// JSPM
+
 {
-  let script
-  script = document.createElement('script')
-  script.async = true
-  script.src = '/asset/javascript/js.package/system.js'
-  document.head.appendChild(script)
+  let script;
+  script = document.createElement('script');
+  script.async = true;
+  script.src = '/asset/javascript/js.package/system.js';
+  document.head.appendChild(script);
   script.onload = () => {
     System.config({
-      baseURL: '/asset/javascript/',
-    })
+      baseURL: '/asset/javascript/' });
 
-    let script = document.createElement('script')
-    script.async = true
-    script.src = '/asset/javascript/jspm.config.js'
-    script.onload = onload
-    document.head.appendChild(script)
-  }
 
-  // Same as jspm.config.js 'browserConfig' option. Maybe will use it in the future for dynamic path, depending on app.
-  // System.import('/asset/javascript/').then(()=>{
-  // });
+    let script = document.createElement('script');
+    script.async = true;
+    script.src = '/asset/javascript/jspm.config.js';
+    script.onload = onload;
+    document.head.appendChild(script);
+  };
+
+
+
+
 }
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NvdXJjZS9hc3NldC9qYXZhc2NyaXB0L2pzcG0uaW5pdGlhbGl6YXRpb24uanMiXSwibmFtZXMiOlsic2NyaXB0IiwiZG9jdW1lbnQiLCJjcmVhdGVFbGVtZW50IiwiYXN5bmMiLCJzcmMiLCJoZWFkIiwiYXBwZW5kQ2hpbGQiLCJvbmxvYWQiLCJTeXN0ZW0iLCJjb25maWciLCJiYXNlVVJMIl0sIm1hcHBpbmdzIjoiOzs7QUFHQTtBQUNFLE1BQUlBLE1BQUo7QUFDQUEsRUFBQUEsTUFBTSxHQUFHQyxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsUUFBdkIsQ0FBVDtBQUNBRixFQUFBQSxNQUFNLENBQUNHLEtBQVAsR0FBZSxJQUFmO0FBQ0FILEVBQUFBLE1BQU0sQ0FBQ0ksR0FBUCxHQUFhLHdDQUFiO0FBQ0FILEVBQUFBLFFBQVEsQ0FBQ0ksSUFBVCxDQUFjQyxXQUFkLENBQTBCTixNQUExQjtBQUNBQSxFQUFBQSxNQUFNLENBQUNPLE1BQVAsR0FBZ0IsTUFBTTtBQUNwQkMsSUFBQUEsTUFBTSxDQUFDQyxNQUFQLENBQWM7QUFDWkMsTUFBQUEsT0FBTyxFQUFFLG9CQURHLEVBQWQ7OztBQUlBLFFBQUlWLE1BQU0sR0FBR0MsUUFBUSxDQUFDQyxhQUFULENBQXVCLFFBQXZCLENBQWI7QUFDQUYsSUFBQUEsTUFBTSxDQUFDRyxLQUFQLEdBQWUsSUFBZjtBQUNBSCxJQUFBQSxNQUFNLENBQUNJLEdBQVAsR0FBYSxrQ0FBYjtBQUNBSixJQUFBQSxNQUFNLENBQUNPLE1BQVAsR0FBZ0JBLE1BQWhCO0FBQ0FOLElBQUFBLFFBQVEsQ0FBQ0ksSUFBVCxDQUFjQyxXQUFkLENBQTBCTixNQUExQjtBQUNELEdBVkQ7Ozs7O0FBZUQiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBJTVBPUlRBTlQ6IFRoaXMgZG9lc24ndCB3b3JrICEgYXMgaXQgZW5kcyB1cCBsb2FkaW5nIHNjcmlwdCBsYXRlciBvbiBpbiB0aGUgbG9hZCBwYWdlLlxuXG4vLyBKU1BNXG57XG4gIGxldCBzY3JpcHRcbiAgc2NyaXB0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2NyaXB0JylcbiAgc2NyaXB0LmFzeW5jID0gdHJ1ZVxuICBzY3JpcHQuc3JjID0gJy9hc3NldC9qYXZhc2NyaXB0L2pzLnBhY2thZ2Uvc3lzdGVtLmpzJ1xuICBkb2N1bWVudC5oZWFkLmFwcGVuZENoaWxkKHNjcmlwdClcbiAgc2NyaXB0Lm9ubG9hZCA9ICgpID0+IHtcbiAgICBTeXN0ZW0uY29uZmlnKHtcbiAgICAgIGJhc2VVUkw6ICcvYXNzZXQvamF2YXNjcmlwdC8nLFxuICAgIH0pXG5cbiAgICBsZXQgc2NyaXB0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2NyaXB0JylcbiAgICBzY3JpcHQuYXN5bmMgPSB0cnVlXG4gICAgc2NyaXB0LnNyYyA9ICcvYXNzZXQvamF2YXNjcmlwdC9qc3BtLmNvbmZpZy5qcydcbiAgICBzY3JpcHQub25sb2FkID0gb25sb2FkXG4gICAgZG9jdW1lbnQuaGVhZC5hcHBlbmRDaGlsZChzY3JpcHQpXG4gIH1cblxuICAvLyBTYW1lIGFzIGpzcG0uY29uZmlnLmpzICdicm93c2VyQ29uZmlnJyBvcHRpb24uIE1heWJlIHdpbGwgdXNlIGl0IGluIHRoZSBmdXR1cmUgZm9yIGR5bmFtaWMgcGF0aCwgZGVwZW5kaW5nIG9uIGFwcC5cbiAgLy8gU3lzdGVtLmltcG9ydCgnL2Fzc2V0L2phdmFzY3JpcHQvJykudGhlbigoKT0+e1xuICAvLyB9KTtcbn1cbiJdfQ==
