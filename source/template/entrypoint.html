@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="description" content="Simple lit-html starter in JSBin">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script type="module" src="http://localhost:8081/@webcomponent/SimpleGreeting.js$transformModule"></script>
+
+  <script type="module">
+    import { html, render } from 'https://unpkg.com/lit-html?module';
+
+    // Define a template function
+    // const myTemplate = (name) => html`<p>Hello ${name}</p>`;
+
+    // // Render the template with some data
+    // render(myTemplate('lit-html'), document.body);
+  </script>
+</head>
+
+<body>
+  <simple-greeting></simple-greeting>
+
+</body>
+
+</html>

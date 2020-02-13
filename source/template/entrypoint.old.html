@@ -3,9 +3,6 @@
 
 <head>
 
-  <!-- base url for all relative urls.  -->
-  <base href="{%= argument.url %}" target="_top">
-
   {% if( argument.distribution == 'es5') { %}
   <!-- This block adds the "custom-elements-es5-adapter.js" shim to your application.
           It includes special logic that removes the shim before it can be parsed or run
@@ -65,6 +62,9 @@
 </head>
 
 <body>
+
+  Web app here
+
 
   {%= insert['body']() %}
 

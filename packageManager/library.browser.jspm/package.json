@@ -12,8 +12,8 @@
     "name": "webapp",
     "main": "app.js",
     "directories": {
-      "packages": "../../source/asset/javascript/@package-jspm",
-      "baseURL": "../../source"
+      "packages": "../../source-clientSide/javascript/@package-jspm",
+      "baseURL": "../../source-clientSide"
     },
     "configFiles": {
       "jspm": "jspm.config.js"

@@ -1,34 +1,39 @@
-const projectConfig = require('../../configuration'),
-  path = require('path'),
-  filesystem = require('fs')
+const path = require('path');
+const filesystem = require('fs');
+const projectConfig = require('../../configuration');
 
 // • Run
 if (filesystem.existsSync(projectConfig.directory.distribution)) {
-  let subdirectoryList = filesystem
+  const subdirectoryList = filesystem
     .readdirSync(projectConfig.directory.distribution, { withFileTypes: true })
     .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name)
-  let exportDistributionArray = [] // different distributions.
-  for (let directoryName of subdirectoryList) {
-    let modulePath = path.join(
+    .map(dirent => dirent.name);
+  const exportDistributionArray = []; // different distributions.
+  for (const directoryName of subdirectoryList) {
+    const distributionPath = path.join(
       projectConfig.directory.distribution,
       directoryName,
       path.relative(projectConfig.directory.root, projectConfig.directory.source),
-      projectConfig.entrypoint.programmaticAPI,
-    )
-    exportDistributionArray.push(require(modulePath))
+    );
+
+    // TODO: should create a targetAgent.json file that will contain instructions for the agents the distribution is targeting.
+    exportDistributionArray.push({path: distributionPath, targetAgent: require(distributionPath, 'targetAgent.json')});
   }
-  module.exports = exportDistributionArray
+  module.exports = exportDistributionArray;
 } else {
   // • Transpilation (babelJSCompiler)
-  const { Compiler } = require('@deployment/javascriptTranspilation')
-  let compiler = new Compiler({ callerPath: __dirname })
-  compiler.requireHook({ restrictToTargetProject: true })
-  let modulePath = path.join(projectConfig.directory.source, projectConfig.entrypoint.programmaticAPI)
-  let exportDistributionArray = [require(modulePath)]
+  const { Compiler } = require('@deployment/javascriptTranspilation');
+  const compiler = new Compiler({ callerPath: __dirname });
+  compiler.requireHook({ restrictToTargetProject: true });
+
+  const exportDistributionArray = [{
+    path: path.join(projectConfig.directory.source), // client side code location
+    // Note: no targetAgent during development.
+  }];
+
   // process.on('exit', () => {
   //   console.log(compiler.loadedFiles.map(value => value.filename))
   //   console.log(compiler.config.ignore)
   // })
-  module.exports = exportDistributionArray
+  module.exports = exportDistributionArray;
 }
