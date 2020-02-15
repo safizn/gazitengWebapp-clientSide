@@ -1,27 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
+<!--
+@license
+Copyright 2018 Google Inc. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html>
+
+<!-- base url for all relative urls.  -->
+<base href="{%= 'http://localhost:8081' || argument.url %}" target="_top">
+
 <html>
 
 <head>
-  <meta name="description" content="Simple lit-html starter in JSBin">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
-  <script type="module" src="http://localhost:8081/@webcomponent/SimpleGreeting.js$transformModule"></script>
-
-  <script type="module">
-    import { html, render } from 'https://unpkg.com/lit-html?module';
-
-    // Define a template function
-    // const myTemplate = (name) => html`<p>Hello ${name}</p>`;
-
-    // // Render the template with some data
-    // render(myTemplate('lit-html'), document.body);
-  </script>
+  <title>switch demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/@webcomponent/@package/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+  <script type="module" src="/@webcomponent/@package/@material/mwc-switch/mwc-switch.js"></script>
+  <script type="module" src="/@webcomponent/@package/@material/mwc-icon/mwc-icon.js"></script>
+  <link rel="stylesheet" href="/stylesheet/demo-component.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
 </head>
 
-<body>
-  <simple-greeting></simple-greeting>
+<body class="unresolved">
+  <header>
+    <a href="index.html">
+      <mwc-icon>arrow_back</mwc-icon>
+      <span>Switch</span>
+    </a>
+  </header>
 
+  <main>
+    <div class="demo-group">
+
+      <mwc-switch disabled></mwc-switch>
+      <mwc-switch disabled checked></mwc-switch>
+
+    </div>
+  </main>
+  <script>
+    addEventListener('load', () => {
+      document.body.classList.remove('unresolved');
+    });
+  </script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<head>
+  <title>drawer demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="@webcomponent/@package/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+  <script type="module" src="@webcomponent/@package/@material/mwc-drawer/mwc-drawer.js"></script>
+  <script type="module" src="@webcomponent/@package/@material/mwc-top-app-bar/mwc-top-app-bar.js"></script>
+  <script type="module" src="@webcomponent/@package/@material/mwc-icon-button/mwc-icon-button.js"></script>
+  <link rel="stylesheet" href="/stylesheet/demo-component.css">
+  <link rel="stylesheet" href="/stylesheet/drawer.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+</head>
+
+<body>
+  <mwc-drawer hasHeader type="modal">
+    <span slot="title">Drawer Title</span>
+    <span slot="subtitle">subtitle</span>
+    <div class="drawer-content">
+      <p>Drawer content</p>
+      <mwc-icon-button icon="gesture"></mwc-icon-button>
+      <mwc-icon-button icon="gavel" id="gavel"></mwc-icon-button>
+    </div>
+    <div slot="appContent">
+      <mwc-top-app-bar>
+        <mwc-icon-button slot="navigationIcon" icon="menu"></mwc-icon-button>
+        <div slot="title">Title</div>
+        <mwc-icon-button slot="actionItems" icon="cast"></mwc-icon-button>
+        <mwc-icon-button slot="actionItems" icon="fingerprint"></mwc-icon-button>
+      </mwc-top-app-bar>
+      <div class="main-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.</p>
+      </div>
+    </div>
+  </mwc-drawer>
+  <script src="/javascript/drawer.js"></script>
+</body>
+
+</html> -->

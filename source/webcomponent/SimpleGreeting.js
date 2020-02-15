@@ -1,6 +1,4 @@
-// import { LitElement, html } from '/@webcomponent/@package/lit-element/lit-element.js'
-// import { LitElement, html } from 'https://unpkg.com/lit-html?module'
-import { LitElement, html } from 'https://unpkg.com/lit-element?module';
+import { LitElement, html } from 'lit-element'; // or use `https://unpkg.com/lit-html?module` or '/@webcomponent/@package/lit-element/lit-element.js'
 
 class SimpleGreeting extends LitElement {
   static get properties() {
@@ -9,7 +7,7 @@ class SimpleGreeting extends LitElement {
 
   constructor() {
     super();
-    this.name = 'NOOOOOOOO';
+    this.name = 'HElloooooooooooo';
   }
 
   render() {
