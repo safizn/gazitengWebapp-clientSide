@@ -1,149 +1,166 @@
-import { Element as PolymerElement } from '/asset/webcomponent/component.package/@polymer/polymer/polymer-element.js'
-import { mixinBehaviors } from '/asset/webcomponent/component.package/@polymer/polymer/lib/legacy/class.js'
-import css from './.css$convertTextToJSModule'
-import html from './.html$convertTextToJSModule'
+import { Element as PolymerElement } from '/asset/webcomponent/component.package/@polymer/polymer/polymer-element.js';
+import { mixinBehaviors } from '/asset/webcomponent/component.package/@polymer/polymer/lib/legacy/class.js';
+import css from './.css$convertTextToJSModule';
+import html from './.html$convertTextToJSModule'; // TODO: Consider switching `polymer-next` to https://www.polymer-project.org/2.0/docs/api/elements/Polymer.DomBind
 
-// TODO: Consider switching `polymer-next` to https://www.polymer-project.org/2.0/docs/api/elements/Polymer.DomBind
-const App = window.App || {}
-// Extend Polymer.Element base class
+const App = window.App || {}; // Extend Polymer.Element base class
 // class Element extends App.mixin.app.setting(Polymer.Element) {
-
 // class Element extends Polymer.mixinBehaviors([ App.behavior ], Polymer.Element) {}
+
 export class Element extends mixinBehaviors([App.behavior], PolymerElement) {
   static get is() {
-    return 'polymer-next'
+    return 'polymer-next';
   }
+
   static get template() {
-    return `<style>${css}</style>${html}`
+    return `<style>${css}</style>${html}`;
   }
+
   static get properties() {
     return {
       /* properties metadata */
-
       layout: {
         type: String,
         notify: true,
-        reflectToAttribute: true,
+        reflectToAttribute: true
       },
       page: {
         type: Object,
         notify: true,
-        reflectToAttribute: true,
+        reflectToAttribute: true
       },
       subroute: {
         type: Object,
         notify: true,
-        reflectToAttribute: true,
-      },
-    }
-  }
-  static get observers() {
-    return [
-      /* observer descriptors */
-      '_routePageChanged(routeData.pathTopLevel, subroute.path)',
-      '_routeChanged(route)',
-    ]
-  }
-  constructor() {
-    super()
-    // Values are altered when server renderint to front-end (slashes are added).
-    this.app.setting.location.routeBasePath = `${this.app.config.PROTOCOL}${this.app.config.HOST}`
-    this.app.documentElement = this // register document element to be used as entrypoint to Polymer's binding system.
-  }
-  connectedCallback() {
-    super.connectedCallback()
+        reflectToAttribute: true
+      }
+    };
   }
 
-  _routeChanged(route) {
-    // console.log(route)
+  static get observers() {
+    return [
+    /* observer descriptors */
+    '_routePageChanged(routeData.pathTopLevel, subroute.path)', '_routeChanged(route)'];
+  }
+
+  constructor() {
+    super(); // Values are altered when server renderint to front-end (slashes are added).
+
+    this.app.setting.location.routeBasePath = `${this.app.config.PROTOCOL}${this.app.config.HOST}`;
+    this.app.documentElement = this; // register document element to be used as entrypoint to Polymer's binding system.
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+  }
+
+  _routeChanged(route) {// console.log(route)
   }
 
   _routePageChanged(pathTopLevel, pathLevel2) {
     // Choose page/view using URL path.
-    if (typeof pathTopLevel == 'undefined') return // skip initial `pathTopLevel` value of undefined.
-    let documentKey = this.checkConditionTree(pathTopLevel, pathLevel2.replace(/\//g, ''))
+    if (typeof pathTopLevel == 'undefined') return; // skip initial `pathTopLevel` value of undefined.
 
-    // Document & Template Tree procesing.
+    let documentKey = this.checkConditionTree(pathTopLevel, pathLevel2.replace(/\//g, '')); // Document & Template Tree procesing.
+
     let document = this.app.document.filter(unit => {
-      if (unit.key == documentKey) return true
-      return false
-    })[0]
+      if (unit.key == documentKey) return true;
+      return false;
+    })[0]; // document.page.filename = document.page.file.substr(0, document.page.file.indexOf('.'));
 
-    // document.page.filename = document.page.file.substr(0, document.page.file.indexOf('.'));
-    this.layout = document.layout
-    this.page = document.page
+    this.layout = document.layout;
+    this.page = document.page;
   }
 
   checkConditionTree(pathTopLevel, pathLevel2) {
-    let documentKey = ''
+    let documentKey = '';
 
-    switch (
-      pathTopLevel // Choose appropriate view/page to view
+    switch (pathTopLevel // Choose appropriate view/page to view
     ) {
-      case '': // empty path
-        documentKey = 'frontpage'
-        break
-      case 'step': // empty path
-        documentKey = 'step'
-        break
+      case '':
+        // empty path
+        documentKey = 'frontpage';
+        break;
+
+      case 'step':
+        // empty path
+        documentKey = 'step';
+        break;
+
       case 'university':
-        documentKey = 'universityPage'
-        break
+        documentKey = 'universityPage';
+        break;
+
       case 'contact':
-        documentKey = 'about'
-        break
+        documentKey = 'about';
+        break;
+
       case 'studyfield':
         switch (pathLevel2) {
           case 'medicine':
-            documentKey = 'medicine'
-            break
+            documentKey = 'medicine';
+            break;
+
           default:
-            documentKey = 'studyfieldPage'
-            break
+            documentKey = 'studyfieldPage';
+            break;
         }
-        break
+
+        break;
+
       case 'country':
         switch (pathLevel2) {
           case 'bucharest':
-            documentKey = 'bucharest'
-            break
+            documentKey = 'bucharest';
+            break;
+
           default:
-            documentKey = 'countryPage'
-            break
+            documentKey = 'countryPage';
+            break;
         }
-        break
+
+        break;
+
       case 'registration':
         switch (pathLevel2) {
           case 'single':
-            documentKey = 'registration-single'
-            break
+            documentKey = 'registration-single';
+            break;
+
           case 'agency':
-            documentKey = 'registration-agency'
-            break
+            documentKey = 'registration-agency';
+            break;
+
           default:
-            documentKey = 'registration-agency'
-            break
+            documentKey = 'registration-agency';
+            break;
         }
-        break
+
+        break;
+
       case 'view1':
-        documentKey = 'homePage-view1'
-        break
+        documentKey = 'homePage-view1';
+        break;
+
       case 'view2':
-        documentKey = 'homePage-view2'
-        break
+        documentKey = 'homePage-view2';
+        break;
+
       case 'view3':
-        documentKey = 'homePage-view3'
-        break
+        documentKey = 'homePage-view3';
+        break;
+
       default:
       case 'view404':
-        documentKey = 'view-state404'
-        break
+        documentKey = 'view-state404';
+        break;
       // case undefined: // skop initial `pathTopLevel` value of undefined.
       //   break;
     }
-    return documentKey
-  }
-}
 
-// Register custom element definition using standard platform API
-window.customElements.define(Element.is, Element)
+    return documentKey;
+  }
+
+} // Register custom element definition using standard platform API
+
+window.customElements.define(Element.is, Element);
