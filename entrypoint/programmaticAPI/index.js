@@ -17,12 +17,13 @@ if (filesystem.existsSync(projectConfig.directory.distribution)) {
     );
 
     // TODO: should create a targetAgent.json file that will contain instructions for the agents the distribution is targeting.
-    exportDistributionArray.push({path: distributionPath, targetAgent: require(distributionPath, 'targetAgent.json')});
+    exportDistributionArray.push({ path: distributionPath, targetAgent: require(distributionPath, 'targetAgent.json') });
   }
   module.exports = exportDistributionArray;
 } else {
   // • Transpilation (babelJSCompiler)
   const { Compiler } = require('@deployment/javascriptTranspilation');
+  console.log('heeelooo');
   const compiler = new Compiler({ callerPath: __dirname });
   compiler.requireHook({ restrictToTargetProject: true });
 
