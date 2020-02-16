@@ -1,77 +1,10 @@
 <!doctype html>
-<!--
-@license
-Copyright 2018 Google Inc. All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
 <html>
-
 <!-- base url for all relative urls.  -->
 <base href="{%= 'http://localhost:8081' || argument.url %}" target="_top">
 
-<html>
-
 <head>
-  <title>switch demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="/@webcomponent/@package/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-  <script type="module" src="/@webcomponent/@package/@material/mwc-switch/mwc-switch.js"></script>
-  <script type="module" src="/@webcomponent/@package/@material/mwc-icon/mwc-icon.js"></script>
-  <link rel="stylesheet" href="/stylesheet/demo-component.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
-</head>
-
-<body class="unresolved">
-  <header>
-    <a href="index.html">
-      <mwc-icon>arrow_back</mwc-icon>
-      <span>Switch</span>
-    </a>
-  </header>
-
-  <main>
-    <div class="demo-group">
-
-      <mwc-switch disabled></mwc-switch>
-      <mwc-switch disabled checked></mwc-switch>
-
-    </div>
-  </main>
-  <script>
-    addEventListener('load', () => {
-      document.body.classList.remove('unresolved');
-    });
-  </script>
-</body>
-
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-<head>
-  <title>drawer demo</title>
+  <title>Graph WebApp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="@webcomponent/@package/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
   <script type="module" src="@webcomponent/@package/@material/mwc-drawer/mwc-drawer.js"></script>
@@ -85,45 +18,703 @@ limitations under the License.
 
 <body>
   <mwc-drawer hasHeader type="modal">
-    <span slot="title">Drawer Title</span>
-    <span slot="subtitle">subtitle</span>
+    <span slot="title">WebApp</span>
+    <span slot="subtitle">Graph assisted app</span>
     <div class="drawer-content">
       <p>Drawer content</p>
       <mwc-icon-button icon="gesture"></mwc-icon-button>
       <mwc-icon-button icon="gavel" id="gavel"></mwc-icon-button>
     </div>
     <div slot="appContent">
-      <mwc-top-app-bar>
+      <mwc-top-app-bar type dense centerTitle>
         <mwc-icon-button slot="navigationIcon" icon="menu"></mwc-icon-button>
-        <div slot="title">Title</div>
+        <div slot="title">Graph WebApp</div>
         <mwc-icon-button slot="actionItems" icon="cast"></mwc-icon-button>
         <mwc-icon-button slot="actionItems" icon="fingerprint"></mwc-icon-button>
       </mwc-top-app-bar>
-      <div class="main-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.</p>
+      <div class="main-content" style="    word-break: break-all;">
+        <article class="markdown-body entry-content p-5" itemprop="text">
+          <h1><a id="user-content-graph-traversal" class="anchor" aria-hidden="true" href="#graph-traversal"><svg
+                class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>Graph Traversal</h1>
+          <p>An immediately executed graph traversal (Alternative name), where nodes instruct on performing actions in
+            customizable implementations. It hands back control to the client allowing to manipulate the traversal
+            propagation
+            and node data processing logic.</p>
+          <ul>
+            <li>Eagerly executed, promise and iterators based.</li>
+            <li>On each traversal a node data can be processed/executed, taking into account precedence constraints.
+            </li>
+            <li>The graph traversal module is callback &amp; Proxy based, which hands overcontrol to concrete functions
+              and
+              returns an iterator of results that the proxy implementation can decide what to do with. Permitting highly
+              configurable traversal behavior.</li>
+            <li>Created for graph where the node's data is the main subject, &amp; traversal rules/configs of a
+              relational
+              graph, are used to decide on the way to deal with multiple processings of the nodes's data - i.e.
+              processing logic
+              &amp; combination of results.</li>
+            <li>The core code of the module is separate from the plugin implementations and largely involved in the
+              integration
+              between the plugin implementations.</li>
+            <li>Immediately Graph Traversal: allows to move the control flow logic of the program to an in-memory graph.
+              In
+              addition to defining the flow of program, it controls the integration logic/algorithm between the
+              procedure/actions of the program - which could be used for different use cases. Describing the algorithm
+              used to
+              handle processes/steps/procedures of the program.</li>
+            <li>Graphs allow to create a visual layer for the program control flow, and allow realtime changes to a
+              running
+              program, in which different presentation elements could be defined to display the program in a sumerized
+              compact
+              manner. The visual representation doesn't necessarily represent the exact graph database structure, rather
+              it adds
+              a level of abstraction.</li>
+          </ul>
+          <h1><a id="user-content-the-role-of-immediately-executed-graphs-in-program-design" class="anchor"
+              aria-hidden="true" href="#the-role-of-immediately-executed-graphs-in-program-design"><svg
+                class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>The role of Immediately Executed Graphs in program design:</h1>
+          <p>Separates the program units or logic or functions from the control flow of program execution. Allowing to
+            focus on
+            developing needed functionality in separate modules, and then placing them in a graph to architect the
+            interactions
+            between them. Immediately Executed Graphs are like an integration layer and control flow for applications,
+            where the
+            program functions are considered abstract units that are referenced in the graph. Therefore it could be
+            called
+            Abstact Visual Programming, because it allows for coding the program with all language features, and
+            integrating it
+            in a visual manner.
+            A program requires 2 structures: (<a href="https://www.youtube.com/watch?v=yC9SQJnTvo4"
+              rel="nofollow">https://www.youtube.com/watch?v=yC9SQJnTvo4</a> <a
+              href="https://www.kullabs.com/classes/subjects/units/lessons/notes/note-detail/4207"
+              rel="nofollow">https://www.kullabs.com/classes/subjects/units/lessons/notes/note-detail/4207</a> <a
+              href="https://teachcomputerscience.com/selection/"
+              rel="nofollow">https://teachcomputerscience.com/selection/</a>
+            <a href="https://cis.temple.edu/~pwang/1057-PC/Lecture/Ch04.htm"
+              rel="nofollow">https://cis.temple.edu/~pwang/1057-PC/Lecture/Ch04.htm</a>)
+            - Actions/procedures - performing calculations, etc.
+            - Sequence - combines the actions to be executed on runtime. These are control structures, this is what the
+            graph is
+            intended to take the role of - sequences the actions of the program.
+            subdevided into the following fundumental control structures:
+            - compound/sequence &amp; parallelism: executed unconditionally. (a body of a function is considered a
+            compound
+            structure)
+            - conditional/selection: if condition, if else, if else if, nested if else, switch case (multi-way
+            selection).
+            - loop/iteration: while, do while, for loop.
+            <em>The loop and conditional structures could be represented in the graph, and the statements/steps/actions
+              are
+              represented in modules/functions/procedures/subroutine (<a href="https://en.wikipedia.org/wiki/Subroutine"
+                rel="nofollow">https://en.wikipedia.org/wiki/Subroutine</a>).</em></p>
+          <h1><a id="user-content-alternative-name-for-immediately-executed-graph" class="anchor" aria-hidden="true"
+              href="#alternative-name-for-immediately-executed-graph"><svg class="octicon octicon-link"
+                viewBox="0 0 16 16" version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>Alternative name for Immediately executed graph:</h1>
+          <h3><a id="user-content-configerability-of-traverser" class="anchor" aria-hidden="true"
+              href="#configerability-of-traverser"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1"
+                height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>Configerability of traverser:</h3>
+          <p><em>Behaviors that should be configurable:</em></p>
+          <ul>
+            <li>Data processing algorithm of each node. e.g. create template.
+              <ul>
+                <li>In order to allow execution of programs or tasks in the JS programs, the graph nodes should have
+                  references
+                  to a specific context with more dynamic data stored. As the graph database is limited to primitive
+                  types, a
+                  solution could be in the pattern of using the following:
+                  <ul>
+                    <li><em>Reference</em>: A string property that references a target entity in a specific context.
+                      e.g. a
+                      function name in the context of the program, or a filename or path in the context of the
+                      filesystem.</li>
+                    <li><em>Context</em>: A context is an existing and accessible environment through the application
+                      logic.
+                      e.g. A passed shared object to the traverser with key-value references to a target elements,
+                      filesystem
+                      environment where the path of the file and name of the exported elements can be referenced, a
+                      module
+                      reference in the scope of the function where the traverser is executed.
+                      An implementation of application context could be using hash map where the keys are referenced in
+                      the
+                      database and the values are the scopped callback with application parameters used.</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Data colelctions algorithm during multiple nodes execution e.g. insert templates into each other or
+              aggregate
+              middleware functions to create a chain/pipeline.
+              <ul>
+                <li>Changing data processing config/implementation mid-traversal.</li>
+                <li>Nodes a selectively included or excluded from the results.</li>
+              </ul>
+            </li>
+            <li>Graph propagation - conditional traversal, or parallel traversals.
+              <ul>
+                <li>Each node can halt (e.g. stop on met condition) the traverser or let it continue through the graph.
+                </li>
+              </ul>
+            </li>
+            <li>General traversal control parameters. e.g. depth.</li>
+            <li>on-demand node registration in the Graph controller / memory storage, etc. In case the graph isn't
+              loaded into
+              memory by it's entirety.</li>
+          </ul>
+          <h3><a id="user-content-multiple-initiated-traversals-in-connected-graphs" class="anchor" aria-hidden="true"
+              href="#multiple-initiated-traversals-in-connected-graphs"><svg class="octicon octicon-link"
+                viewBox="0 0 16 16" version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>Multiple initiated traversals in connected graphs:</h3>
+          <p>The same graph could be composed of multiple traversals. Where each traversal sequence/set uses a set of
+            configs
+            and aggregates separately.
+            Initiating the traversal set/sequence could be from the core code of graph traversal module (e.g. VALUE
+            edge), or
+            externally in referenced code (e.g. in middleware functions).
+            Options to support a common way to initiate a traversal sequence and represent it in the graph.
+            - Initiate graph sequence using a relationship (e.g. "initiate"). How to deal with the relational value.
+            VALUE {type: edge:traverse} -&gt; Stage &lt;-- TRAVERSE {traversalConfig: Condition}</p>
+          <p>Some Types of traversal configs: Condition, Middleware, Template. Which mark the different implemenetaion
+            sets used
+            for graph initiated traversal.</p>
+          <h3><a id="user-content-applications" class="anchor" aria-hidden="true" href="#applications"><svg
+                class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>Applications:</h3>
+          <p>Different applications may use this module:</p>
+          <ul>
+            <li>Build systems with package dependencies - make a topological sort to know which library should be built
+              first.
+            </li>
+            <li>Creating pipelines to manipulate data. e.g. <a href="https://docs.gitlab.com/ee/ci/pipelines.html"
+                rel="nofollow">CI/CD pipelines</a>.
+              <ul>
+                <li>Execution pipelines for code building.</li>
+                <li>Task/command runner with ability for synchronous or async execution.</li>
+              </ul>
+            </li>
+            <li>Task schedualing - which task should procede which one.</li>
+            <li>AST representation in NoSQL database.</li>
+            <li>Template system for creating complex templates:
+              <em>A better terminology whould be "document", as it may represent a collection of template &amp;
+                configs/parameters.</em>
+              Web documents (or documents) are composed of templates, represented as graphs.
+              Templates require a rendering algorithm/engine to deal with marked points in them, and produce rendered
+              content.
+              Templates can be nested and each nested template should be redered as well.
+              Redering algorithm could involve:
+              - Only replacement of marked points in the template.
+              - Executionng of code logic and replacement of points with content produced by that code.</li>
+            <li>Server request handling with on the fly middleware chain compisition.</li>
+            <li>etc.</li>
+          </ul>
+          <h1><a id="user-content-graph-concepts" class="anchor" aria-hidden="true" href="#graph-concepts"><svg
+                class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>Graph Concepts:</h1>
+          <ul>
+            <li>
+              <p><strong>Graph</strong> <em>(Node Relationship Graph / Nested Unit Tree)</em> - can represent any
+                collection of
+                objects having some kind of pairwise relationship (conveying of relational information). Many realworld
+                systems
+                and problems can be modeled using a graph.</p>
+            </li>
+            <li>
+              <p>Programming concepts implemented in the graph:
+                The graph traversal chain (a single recursive traversal call) could traverse nodes in an independent
+                way, where
+                each node traversal awaits only it's own nested and siblings traversals, or it could be executed in a
+                manner
+                where each node can control the entire chain iterator and await any other node, even if it is not nested
+                or part
+                of the same port group of nodes.</p>
+              <ul>
+                <li>Command execution in sequence and in parallel.</li>
+                <li>Conditionals - logical operations:
+                  <ul>
+                    <li>Switch multiple cases</li>
+                    <li>Switch boolean cases
+                      (Both of the above could be represented as a special type of Stage node)</li>
+                    <li>AND logical operator</li>
+                    <li>OR logical operator
+                      (Both of the above can be represented as a propagation implementation in a port with several next
+                      stages
+                      traversed.)</li>
+                  </ul>
+                </li>
+                <li>Nodes types concept:
+                  <ul>
+                    <li>Each node type has plugable implementations.</li>
+                    <li>Each node gives instructions to traverser and returns a specific return type that is used in the
+                      integration layer (core layer) of the graph traversal module.</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>Classification of node types/labels:</p>
+              <ul>
+                <li>Entrypoint/Root nodes: are nodes that can be traversed, and provided as an entrypoint to the graph.
+                  <ul>
+                    <li>e.g. Stage, Reroute/SubgraphTemplate.</li>
+                  </ul>
+                </li>
+                <li>Nested/Supplement nodes: are nodes which are nested to other nodes and provide features for the
+                  traversal.
+                  The traversion could not start from these nodes.
+                  <ul>
+                    <li>e.g. Port, Configuration, Process.</li>
+                  </ul>
+                </li>
+                <li>Reference/Reroute nodes: Nodes that are treated as a placement for other nodes (referencing other
+                  nodes).
+                  Reroute node also allows to divide a graph into subgraphs by pointing to a root node and storing
+                  information
+                  about the subgraph.
+                  Reference nodes could be used as: (Maybe check <a
+                    href="https://www.worldscientific.com/doi/abs/10.1142/9789812384720_0001"
+                    rel="nofollow">https://www.worldscientific.com/doi/abs/10.1142/9789812384720_0001</a>)
+                  - Node replacement positions: Where the position node is ment to be replaced with the target node
+                  (referenced
+                  node).
+                  - Node placement in subgraph: Where the reference nodes are ment to be placed into a target subgraph
+                  (e.g.
+                  added into the next relatioship of a stage).
+                  <ul>
+                    <li>e.g. Reroute, Switch nodes, and maybe Reroute/SubgraphTemplate could be considered a reference
+                      node.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p><strong>Graph type &amp; features</strong> - Usually the Graph that is used is Directed, Acyclic or
+                cyclic,
+                Weighed, Sparsed <em>(few edges in comparison to complexity analysis)</em>, &amp; immediately-processed
+                graph
+                (created to be processed during traversal). e.g. Trees/Herarchies/Nested Treemaps.</p>
+              <ul>
+                <li><strong>Stage nodes</strong>: are node traverser positions that guide the traverser to perform
+                  actions
+                  involding adverse effects or returning results.</li>
+                <li><strong>Procss nodes</strong>: are responsible for data process, performing actions and optionally
+                  returning
+                  a result. Each Process node uses it's own properties and traversal information to result in an
+                  action/effect,
+                  depending on the implementation being used.
+                  Execute will process the node taking into consideration graph data and parameters, and Pipe will allow
+                  for
+                  further processing of the result of the main process.</li>
+                <li><strong>Multiedge/Parallel edges</strong> - Multiple connections between 2 verticies/nodes.</li>
+                <li><strong>Self edges</strong> - Loop allowed graph.</li>
+                <li><strong>ports</strong>: group of connections that relate to each other or have specific
+                  configuration.
+                  (Related resources - <a
+                    href="https://cs.stackexchange.com/questions/41320/terminology-for-a-graph-with-ports-on-its-nodes?newreg=33ff713616b04cdcbdd3df94b1ed841c"
+                    rel="nofollow">Stackoverflow - Terminology for a graph with ports on its nodes</a>, <a
+                    href="https://hal.inria.fr/inria-00139363/en/" rel="nofollow">Multigraphs with Ports publication
+                    1</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1571066108004295"
+                    rel="nofollow">Multigraphs with
+                    Ports publication 1</a>.
+                  Ports control the traverser propagation order to the next Stage nodes (propagation control), in
+                  addition to
+                  grouping the Stages into meaningful groups that could be used in the aggregator implementations.
+                  <ul>
+                    <li>Selective/restricted port/Channel concepts: a port/Channel that propages according to a set of
+                      rules or
+                      conditions. Ports can be chained to further filter the Stages in the returned iterator.
+                      <ul>
+                        <li>Iteration limit: Each port/Channel returns an iteration of nodes. A property on the node
+                          called
+                          'iterationLimit' could be used to limit the number of returned nodes during iteration next
+                          calls.
+                          <code>∞</code> (Infinity in javascript) value could be representing an unlimited number of
+                          iterations,
+                          while a number is used to specify the amount of iterations returning a node before finishing
+                          the
+                          iterator with marking it as done.</li>
+                        <li>Conditional progation / Switch case concept - Allows traversing the grpah selectively,
+                          picking the
+                          nodes required for the next traversal using conditions or logical decision making algorithms.
+                          e.g.
+                          Switch Case port where it checks if a condition is met, then picks a single matching node and
+                          returns
+                          it in the iterator.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><strong>Path</strong> - is a chain of edges that specifies a path from &amp; to a pair of nodes. A
+                  sequence
+                  of edges/connections that connect a sequence of nodes.</li>
+                <li><strong>Lazy execution during traversal</strong> - on each node reached the traversal could be
+                  halted or
+                  continued and a processing implementation could be executed before continuing traversing or have a
+                  side effect
+                  during execution.</li>
+                <li><strong>Node &amp; edge filter</strong> - some implementations can filter specific nodes through
+                  conditions.
+                </li>
+                <li>Node Reference:
+                  <ul>
+                    <li>External reference: holding reference information to a node that exist in another location, when
+                      imported to an existing graph database, a connection will be created to the referenced graph.</li>
+                    <li>Placement references: a way to insert nodes into a subgraph.</li>
+                    <li>Replacement reference: replaces the current position with another node.</li>
+                  </ul>
+                </li>
+                <li><strong>node inheritance</strong> <em>(subnode-supernode / node extension/inheritance)</em> - node
+                  that
+                  extends another node, in a way that any changes of the parent node is retained by the child node.
+                  (Newer nore:
+                  this seems to be a similar concept to the reroute node <code>extends</code> relationship).
+                  This is a better implementaiton for tree templates (extending an existing node tree without changing
+                  it) that
+                  used pathPointer or connectionPathSequence to reach the desired position for adding nodes inthe nested
+                  subtree/subnodes.
+                  <ul>
+                    <li>override connection - node that extends/inherit from another node and overrides a specific
+                      connection of
+                      the supernode, if the supernode connectionKey is removed then the overriding connection of the
+                      subclass
+                      will be ignored.</li>
+                  </ul>
+                </li>
+                <li><strong>Reusable Subgraph Template</strong> (will be refered shortly as “subgraph”) – A part of a
+                  directed
+                  graph with a root node, representing the entrypoint to the subgraph. The subgraph could be referenced
+                  by nodes
+                  in the graph, and could be extended by other “subgraph templates”. Extending a subgraph allows to
+                  insert
+                  additional nodes to the subgraph in desired positions or paths (traversal chain or sequence of edges).
+                  Much in
+                  the sense of externally mapping the same target graph into other different graphs, without changing
+                  the
+                  original target graph.
+                  (a function which takes a graph* (your 'subgraph') *as an input and maps to another graph dependent on
+                  that
+                  input.)
+                  <ul>
+                    <li><em>subgraph template</em> node - marks an entrypoint to a graph, and allows for adding external
+                      nodes
+                      to it. It may also create a new interface to the target graph, where it specifies possible
+                      connection
+                      positions or ports to map it to the external graph. <code>extends</code> - will allow to create
+                      instances
+                      of another subgraph with different manipulation parameters.</li>
+                    <li><strong>Additional children/edges</strong> conecpt - where a graph can be used (traversed)
+                      through a
+                      proxy without manipulating it directly. Related to insertion points concept - adding nodes in
+                      insertion
+                      points in the graph. Each edge has a position/arrangement property that defines the order and a
+                      placement
+                      (in case it is an additional connection to be traversed). e.g.
+                      <code>pathPointerKey</code>/<code>connectionKey</code> could be an additional conenction that is
+                      added to
+                      the existing conenctions for traversal purposes.</li>
+                  </ul>
+                </li>
+                <li>Dynamic traverser configuration - The traverser in each current position can change behavior
+                  according to
+                  the evaluation of the node. i.e. the traverser may change modes controlled by each stage node. Stage
+                  nodes
+                  could be also thought as <code>traverser controller</code> nodes that give the traverser in the
+                  current
+                  position, instrcutions to follow and changes it's behavior.</li>
+              </ul>
+            </li>
+            <li>
+              <p><strong>Graph Elements</strong>:</p>
+              <ul>
+                <li><strong>Edge</strong> <em>(Relationship / Connection)</em> - Edges could be directed with
+                  'ingoing'/'outgoing' direction.
+                  <ul>
+                    <li>Source/destination nodes - are nodes that make up the edges of a connection. <em>Or start/end
+                        nodes</em>
+                    </li>
+                    <li>connectionKey / pathPointerKey</li>
+                  </ul>
+                </li>
+                <li><strong>Node</strong> <em>(Vertex / ReusableNestedUnit / Unit)</em> - e.g. a node references a
+                  single data
+                  item that should be used or consumed in specific way. Nodes have connections which determine the
+                  traversal
+                  propagation implementation. I.e. the concept of weighted graph.
+                  <ul>
+                    <li>DataItem/Record - a node as a resource of data to be executed by a processing implementation.
+                      e.g. {
+                      Type: ‘reference’, importModuleName: ‘’, processNode: ‘’ }</li>
+                    <li>Resource: Resource record. The RESOURCE relationship holds the context type
+                      <code>filsystemReference</code> or <code>applicationReference</code>, and the resource node could
+                      be of
+                      different types following a convention used by the app.
+                      e.g. A File node that has { type: 'file', path: '' } with a resource relation context of
+                      <code>filesystemContext</code>, as the File node holds references to a specific path &amp; module
+                      in the
+                      filesystem context. Other RESOURCE nodes could be references to the variables in the application
+                      logic
+                      context.</li>
+                  </ul>
+                </li>
+                <li><strong>Port</strong> <em>(insetionPoint)</em> (<em>related terminology = junction, synapse, group,
+                    inlet/outlet, channel, junctionPoint, portal, relationship, relation</em>).</li>
+              </ul>
+            </li>
+          </ul>
+          <hr>
+          <h1><a id="user-content-usage" class="anchor" aria-hidden="true" href="#usage"><svg
+                class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>Usage:</h1>
+          <h3><a id="user-content-general-steps" class="anchor" aria-hidden="true" href="#general-steps"><svg
+                class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>General steps</h3>
+          <ul>
+            <li>Supply with grpah.load graph into memory:
+              <ul>
+                <li>application's logic variables.</li>
+                <li>In memory graph database.</li>
+              </ul>
+            </li>
+            <li>set traversal / rules
+              <ul>
+                <li>parameters flags &amp; switch keys/options.</li>
+                <li>parameter implementations passed</li>
+              </ul>
+            </li>
+            <li>Evaluate position:
+              Decide which node results to include in the results and which to traverse their nested nodes.
+              <ul>
+                <li><strong>Configuration node</strong> - a set of key values that reference implementations and
+                  behavior
+                  options for the traverser to follow in a current position and possibly nested positions too. Possible
+                  options:
+                  <ul>
+                    <li><em>propagation:</em> 'continue' | 'break' | 'hult' (hult in the sense of stopping the entire
+                      traversal
+                      from entrypoint node).</li>
+                    <li><em>aggregation:</em> 'process&amp;include' | 'process&amp;exclude' | 'skipProcess' (don't
+                      process)</li>
+                  </ul>
+                </li>
+                <li><strong>Evaluator node</strong> - usually checks for a condition and picks a configuration deciding
+                  the
+                  behavior of the traverser and actions that should be taken in the current position.</li>
+              </ul>
+            </li>
+            <li>Start traversal from entrypoint (starting point) node.
+              <ul>
+                <li>nodes can change traversal rules to next traversals.</li>
+                <li>nodes (e.g. Stages) can halt traversal or continue (can control traversal propagation).</li>
+              </ul>
+            </li>
+            <li>Traverser will execute the nodes according to parameters.</li>
+            <li>run nesteed stages</li>
+            <li>aggregate results of executions.</li>
+          </ul>
+          <h3><a id="user-content-api" class="anchor" aria-hidden="true" href="#api"><svg class="octicon octicon-link"
+                viewBox="0 0 16 16" version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>API:</h3>
+          <ul>
+            <li>iterator of node's connections</li>
+            <li>In-memory database: Build a pluggable in memory handling of graph entities. Handling in memory api:
+              <ul>
+                <li>get connections</li>
+                <li>get ports</li>
+                <li>get connections of a port.</li>
+              </ul>
+            </li>
+            <li></li>
+          </ul>
+          <h3><a id="user-content-in-memory-storage-structure--requirements" class="anchor" aria-hidden="true"
+              href="#in-memory-storage-structure--requirements"><svg class="octicon octicon-link" viewBox="0 0 16 16"
+                version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>In-memory storage structure &amp; requirements:</h3>
+          <ul>
+            <li>Example of algorithms / data structures for graph storage:
+              <ul>
+                <li>Adjancency Matrix representation - using matrix array to store edeges for nodes.</li>
+                <li>Adjacency list</li>
+              </ul>
+            </li>
+            <li>Data items to be processed are stored as part of the graph. Each data item can be referenced/connected
+              by
+              multiple nodes (isn' strictly boudn to a single node).</li>
+            <li>Handling multiple graphs in memory which are separated and traversals or caching are not shared. e.g. a
+              graph
+              for Middleware, another for Condition, Template, etc.</li>
+          </ul>
+          <h3><a
+              id="user-content-integration-between-different-node-types-in-mixed-or-separate-subgraphs-according-to-the-nodes-intended-usage"
+              class="anchor" aria-hidden="true"
+              href="#integration-between-different-node-types-in-mixed-or-separate-subgraphs-according-to-the-nodes-intended-usage"><svg
+                class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>Integration between different node types in mixed or separate subgraphs, according to the nodes'
+            intended usage:</h3>
+          <ul>
+            <li>Middleware: execute</li>
+            <li>Condition: evaluate and control propagation. Conditionally skip the task execution
+              a graph that checks conditions while traversing and returns an answer to complex conditional relations
+              with
+              prerequisite conditions. e.g. could be used for routing to a desired value/callback/action.</li>
+            <li>Template: aggregation</li>
+            <li>Data query schema: execute</li>
+          </ul>
+          <h3><a
+              id="user-content-how-to-deal-with-extending-an-existing-graph--templating-a-subgraph-where-additional-connections-can-be-added-to-the-graph-in-specific-places-node-inheritance-concept-mentioned-above"
+              class="anchor" aria-hidden="true"
+              href="#how-to-deal-with-extending-an-existing-graph--templating-a-subgraph-where-additional-connections-can-be-added-to-the-graph-in-specific-places-node-inheritance-concept-mentioned-above"><svg
+                class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>How to deal with extending an existing graph / templating a subgraph, where additional
+            connections can
+            be added to the graph in specific places. (node inheritance concept mentioned above)</h3>
+          <hr>
+          <h1><a id="user-content-resources" class="anchor" aria-hidden="true" href="#resources"><svg
+                class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>Resources</h1>
+          <p><em>resources about graphs and different implementations:</em></p>
+          <ul>
+            <li>Related to extending graphs - <a href="https://en.wikipedia.org/wiki/Graph_minor#Example"
+                rel="nofollow">https://en.wikipedia.org/wiki/Graph_minor#Example</a></li>
+            <li>Neo4j example traversal APi - <a
+                href="https://neo4j.com/docs/java-reference/current/tutorial-traversal/"
+                rel="nofollow">https://neo4j.com/docs/java-reference/current/tutorial-traversal/</a></li>
+            <li>Topological sort of graph based on the interconnected edges, not any numeric value (non-numeric sort). a
+              set of
+              tasks to be completed in precedence constraints (precedence schedualing) - DepthFirstOrder using DFS
+              algorithm -
+              <a href="https://fr.coursera.org/lecture/algorithms-part2/topological-sort-RAMNS"
+                rel="nofollow">https://fr.coursera.org/lecture/algorithms-part2/topological-sort-RAMNS</a></li>
+            <li><a
+                href="https://www.youtube.com/watch?v=gXgEDyodOJU&amp;list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&amp;index=38"
+                rel="nofollow">https://www.youtube.com/watch?v=gXgEDyodOJU&amp;list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&amp;index=38</a>
+            </li>
+            <li>Graph workshop publications about different graph concepts including new researches <a
+                href="http://www.termgraph.org.uk" rel="nofollow">http://www.termgraph.org.uk</a></li>
+            <li>verbal explanation of execution order concept - <a
+                href="https://stackoverflow.com/questions/6477269/how-to-use-graph-theory-for-scheduling-execution-order"
+                rel="nofollow">https://stackoverflow.com/questions/6477269/how-to-use-graph-theory-for-scheduling-execution-order</a>
+            </li>
+            <li><a href="https://en.wikipedia.org/wiki/Topological_sorting"
+                rel="nofollow">https://en.wikipedia.org/wiki/Topological_sorting</a></li>
+            <li><a href="https://stackoverflow.com/questions/6749255/directed-graph-processing-in-java"
+                rel="nofollow">https://stackoverflow.com/questions/6749255/directed-graph-processing-in-java</a></li>
+            <li><a href="https://github.com/idooley/DAGExecutor">https://github.com/idooley/DAGExecutor</a></li>
+            <li><a href="https://jgrapht.org/" rel="nofollow">https://jgrapht.org/</a> - check out summary of the graph
+              framework.</li>
+            <li><a href="https://youtu.be/Q9PIxaNGnig?t=151" rel="nofollow">https://youtu.be/Q9PIxaNGnig?t=151</a></li>
+            <li><a
+                href="https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/graph/topological-sorting">https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/graph/topological-sorting</a>
+            </li>
+            <li><a href="https://davidurbina.blog/on-partial-order-total-order-and-the-topological-sort/"
+                rel="nofollow">https://davidurbina.blog/on-partial-order-total-order-and-the-topological-sort/</a></li>
+            <li>Graph API - <a href="https://www.coursera.org/lecture/algorithms-part2/digraph-api-Jeyta"
+                rel="nofollow">https://www.coursera.org/lecture/algorithms-part2/digraph-api-Jeyta</a></li>
+            <li><a href="https://davidurbina.blog/on-partial-order-total-order-and-the-topological-sort/"
+                rel="nofollow">https://davidurbina.blog/on-partial-order-total-order-and-the-topological-sort/</a></li>
+            <li><a href="https://medium.freecodecamp.org/all-you-need-to-know-about-tree-data-structures-bceacb85490c"
+                rel="nofollow">Tree structures article</a></li>
+            <li>yWorks diagramming tools - products like the html graph editor, and Neo4j graph presentation.
+              <ul>
+                <li>Documentation contains lots of useful definitions, and so the evaluation version.</li>
+              </ul>
+            </li>
+            <li>Cons of visual programming - <a
+                href="https://mikehadlow.blogspot.com/2018/10/visual-programming-why-its-bad-idea.html"
+                rel="nofollow">https://mikehadlow.blogspot.com/2018/10/visual-programming-why-its-bad-idea.html</a></li>
+            <li>Comments about visual programming - <a
+                href="https://www.reddit.com/r/programming/comments/9kgk75/visual_programming_why_its_a_bad_idea/"
+                rel="nofollow">https://www.reddit.com/r/programming/comments/9kgk75/visual_programming_why_its_a_bad_idea/</a>
+            </li>
+          </ul>
+          <h1><a id="user-content-notes" class="anchor" aria-hidden="true" href="#notes"><svg
+                class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>Notes:</h1>
+          <ul>
+            <li>Generally speaking, there isn't really a concept of mutable state in abstract algebra (of which Graph
+              Theory is
+              a part). Only existence/non-existence. Graphs have a static state, and cannot be mutable in common Graph
+              Theory
+              concepts. Any 'change' indicated would be another distinct graph.</li>
+          </ul>
+          <h1><a id="user-content-modules-that-depend-on-the-graphtraversal-module" class="anchor" aria-hidden="true"
+              href="#modules-that-depend-on-the-graphtraversal-module"><svg class="octicon octicon-link"
+                viewBox="0 0 16 16" version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>Modules that depend on the graphTraversal module:</h1>
+          <ul>
+            <li>buildTool</li>
+            <li>deploymentScript (graph data loading)</li>
+            <li>services repositories.</li>
+            <li></li>
+          </ul>
+          <hr>
+          <p><a href="/AppScriptIO/graphTraversal/blob/master/documentation/TODO.md">Development TODO list</a></p>
+          <hr>
+          <h3><a id="user-content--license-mit" class="anchor" aria-hidden="true" href="#-license-mit"><svg
+                class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" height="16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                </path>
+              </svg></a>
+            <g-emoji class="g-emoji" alias="key"
+              fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f511.png">🔑</g-emoji> License:
+            <a href="/AppScriptIO/graphTraversal/blob/master/.github/LICENSE">MIT</a>
+          </h3>
+        </article>
       </div>
     </div>
   </mwc-drawer>
   <script src="/javascript/drawer.js"></script>
 </body>
 
-</html> -->
+</html>
