@@ -1,6 +1,6 @@
 {
 	"name": "@service/gazitengWebapp-clientSide",
-	"version": "1.2.6",
+	"version": "1.2.5",
 	"main": "./entrypoint/programmaticAPI",
 	"bin": {},
 	"flat": false,
@@ -13,12 +13,4 @@
 		"upgrade": "echo '• Note: packageManager flat dependency requires a separate manual upgrade.'",
 		"release": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".buildAndRelease.moduleProject({ shouldBuildCode: false })\""
 	},
-	"dependencies": {},
-	"devDependencies": {
-		"@deployment/deploymentScript": "https://github.com/AppScriptIO/deploymentScript#semver:^2.x.x",
-		"@deployment/javascriptStaticAnalysis": "https://github.com/AppScriptIO/javascriptStaticAnalysis#semver:^3.x.x",
-		"@deployment/javascriptTranspilation": "https://github.com/AppScriptIO/javascriptTranspilation#semver:^2.x.x",
-		"@deployment/scriptManager": "https://github.com/AppScriptIO/scriptManager#semver:^2.x.x",
-		"typescript": "^3.3.3333"
-	}
 }
