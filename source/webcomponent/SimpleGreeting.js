@@ -2,7 +2,11 @@ import { LitElement, html } from './@package/lit-element'; // or use `https://un
 
 class SimpleGreeting extends LitElement {
   static get properties() {
-    return { name: { type: String } };
+    return {
+      name: {
+        type: String
+      }
+    };
   }
 
   constructor() {
@@ -15,6 +19,7 @@ class SimpleGreeting extends LitElement {
       <p>Hello, ${this.name}!</p>
     `;
   }
+
 }
 
 customElements.define('simple-greeting', SimpleGreeting);
