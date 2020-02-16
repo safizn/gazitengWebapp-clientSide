@@ -1,6 +1,6 @@
 {
-  "name": "@packageManager/browserYarn",
-  "version": "1.0.0",
+  "name": "@packageManager/yarn",
+  "version": "1.0.1",
   "main": "IRRELEVENT",
   "flat": true,
   "dependencies": {
