@@ -9,12 +9,7 @@
  */
 
 /* eslint-env node */
-
 module.exports = {
-  staticFileGlobs: [
-    '/index.html',
-    '/manifest.json',
-    '/component.package/webcomponentsjs/webcomponents-lite.min.js',
-  ],
-  navigateFallback: 'index.html',
+  staticFileGlobs: ['/index.html', '/manifest.json', '/component.package/webcomponentsjs/webcomponents-lite.min.js'],
+  navigateFallback: 'index.html'
 };
